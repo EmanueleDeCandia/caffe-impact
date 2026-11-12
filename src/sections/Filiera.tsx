@@ -100,7 +100,7 @@ export default function Filiera() {
                 ))}
               </dl>
               <p className="mt-3 font-mono text-[9px] leading-relaxed tracking-[0.08em] text-ink/60 uppercase border-t border-dashed border-ink/20 pt-2.5">
-                Nota metodologica: abbiamo assunto 100 imprese per il Pilota Clienti Win-Back (Ascoli Piceno e Fermo) con 12 consegne annue per cliente, in cui almeno un addetto acquisti un Cestino di Prodotto della Filiera locale ad una distanza di 50 km (totale 60.000 km di tragitti dedicati evitati).
+                Nota metodologica: abbiamo assunto 100 imprese con 12 consegne annue per cliente, in cui almeno un addetto acquisti un Cestino di Prodotto della Filiera Corta entro una distanza di 50 km (totale 60.000 km di tragitti dedicati evitati).
               </p>
             </div>
           </div>

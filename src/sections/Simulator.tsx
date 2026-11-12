@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { LiveDot, SectionHead, Tag } from "@/components/ui";
+import { LoyaltyArchitectureModal } from "@/components/LoyaltyArchitectureModal";
+import { SocialImpactIndexModal } from "@/components/SocialImpactIndexModal";
 import { MODEL, calcolaImpattoAvanzato, fmt } from "@/lib/data";
 
 /* numero che insegue il valore target con easing: dà vita ai risultati mentre si trascina */
@@ -131,6 +133,8 @@ export default function Simulator() {
   const [caffeGiorno, setCaffeGiorno] = useState(2);
   const [distanzaKm0, setDistanzaKm0] = useState(50);
   const [showNota, setShowNota] = useState(false);
+  const [openLoyaltyModal, setOpenLoyaltyModal] = useState(false);
+  const [openSiiModal, setOpenSiiModal] = useState(false);
 
   // Variabili di portafoglio imprese target (0 - 100)
   const [clientiAttuali, setClientiAttuali] = useState(50);
@@ -236,7 +240,18 @@ export default function Simulator() {
           lead="Configurate i parametri reali della vostra sede: presidi OCS, distributori, tasso di consumo effettivo e raggio dei prodotti a Km 0. I risultati alimentano il Borsellino Aziendale con Biglietti Omaggio, Punti Impatto e dataset per il reporting ESG."
           aside={
             <div className="mt-2 border border-ink/25 bg-bone p-4">
-              <p className="font-mono text-[9.5px] tracking-[0.18em] text-ink/50 uppercase">Parametri di calcolo</p>
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-mono text-[9.5px] tracking-[0.18em] text-ink/50 uppercase">Parametri di calcolo</p>
+                <button
+                  type="button"
+                  onClick={() => setOpenSiiModal(true)}
+                  className="group relative inline-flex items-center gap-1.5 border-2 border-ink bg-[#ffe600] px-2.5 py-1 font-mono text-[9.5px] font-black uppercase tracking-[0.14em] text-ink shadow-[3px_3px_0_#15140f] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#fff04d] hover:shadow-[4px_4px_0_#ed6f5c] cursor-pointer"
+                  title="Apri Specifica Tecnica Social Impact Index SII-100"
+                >
+                  <span className="h-1.5 w-1.5 bg-coral" />
+                  <span>SII-100 ↗</span>
+                </button>
+              </div>
               <ul className="mt-3 space-y-1.5 font-mono text-[10px] leading-relaxed text-inksoft/80">
                 <li>{MODEL.giorniLavorativi} giorni lavorativi effettivi / anno</li>
                 <li>1.000 erogazioni = 5 Biglietti Omaggio (@ 15 €)</li>
@@ -472,15 +487,23 @@ export default function Simulator() {
               <div className="mt-px grid grid-cols-1 gap-px bg-ink/15 sm:grid-cols-3">
                 <div className="bg-paper p-3 font-mono text-[9px] leading-relaxed text-inksoft/85">
                   <p className="font-bold text-ink uppercase tracking-[0.08em] mb-1">Strategia Fidelizzazione:</p>
-                  Integrazione del paniere a Km 0 e Borsellino con Punti Impatto per votare le rassegne. Zero canoni extra, massima barriera d'uscita contro i concorrenti.
+                  Integrazione del paniere a Km 0 e Borsellino con Punti Impatto per votare le rassegne. Nessun costo nascosto, massima differenziazione rispetto ai concorrenti.
                 </div>
                 <div className="bg-paper p-3 font-mono text-[9px] leading-relaxed text-inksoft/85">
                   <p className="font-bold text-coral uppercase tracking-[0.08em] mb-1">Strategia Acquisizione:</p>
-                  Spostamento del posizionamento fuori dalla guerra del prezzo: leva su Welfare territoriale, biglietti di Performing Art ed Earned Media sui quotidiani locali.
+                  Spostamento del posizionamento fuori dalla guerra del prezzo: leva su premi esperienziali nel territorio, pass d'onore ed Earned Media sui media regionali.
                 </div>
                 <div className="bg-paper p-3 font-mono text-[9px] leading-relaxed text-inksoft/85">
                   <p className="font-bold text-ink uppercase tracking-[0.08em] mb-1">Strategia Win-Back:</p>
                   Riaggancio ad alto valore simbolico di clienti dormienti (focus Ascoli e Fermo) per saturare i percorsi della flotta con inviti VIP e prodotti locali dedicati.
+                </div>
+              </div>
+
+              {/* Nota Metodologica sulla Normalizzazione dell'Indice e Imprese Target */}
+              <div className="mt-3 flex items-start gap-2.5 border border-ink/20 bg-paper p-3 font-mono text-[9px] leading-relaxed text-ink/75">
+                <span className="font-bold text-coral uppercase shrink-0">Nota di calcolo:</span>
+                <div>
+                  Il <strong>Social Impact Index (0–100)</strong> è normalizzato e intrinseco alla <em>singola impresa aderente</em> (misura engagement, consumi, azzeramento viaggi Km 0 e presidi OCS/Vending). I cursori del Portafoglio quantificano l'effetto moltiplicatore scalato sui volumi complessivi di territorio (caffè totali, CO₂, biglietti e indotto). Il rating SII della singola organizzazione è perciò rigorosamente normalizzato e invariante, sia che si analizzi 1 singola impresa sia che si simuli l'intero portafoglio di 100 o più aziende.
                 </div>
               </div>
             </div>
@@ -530,32 +553,58 @@ export default function Simulator() {
                   label="Valore Complessivo Generato"
                   value={r.valoreTotale}
                   prefix="€ "
-                  sublabel="welfare + servizi + indotto"
+                  sublabel="esperienze + servizi + indotto"
                 />
               </div>
             </div>
 
-            <div className="mt-8 border border-ink/25 bg-bone p-5 md:p-6">
+            <div className="mt-8 border border-ink/25 bg-bone p-5 md:p-6 shadow-[6px_6px_0_rgba(21,20,15,0.06)]">
+              {/* Header Box con Marcatore e Ombra Brutalista */}
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-ink/15 pb-4 mb-5">
+                <div>
+                  <p className="font-mono text-[9.5px] tracking-[0.2em] text-ink/60 uppercase font-bold">
+                    Rating Rigoroso &amp; Tiering di Sostenibilità
+                  </p>
+                  <p className="mt-0.5 text-[14px] font-black uppercase tracking-tight text-ink">
+                    Social Impact Index &amp; Borsellino Aziendale
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setOpenLoyaltyModal(true)}
+                    className="font-mono text-[10px] tracking-[0.14em] text-coral uppercase font-bold hover:underline cursor-pointer flex items-center gap-1"
+                  >
+                    Borsellino &amp; Tiering ↗
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setOpenSiiModal(true)}
+                    className="group relative inline-flex items-center gap-2.5 border-2 border-ink bg-[#ffe600] px-4 py-2 font-mono text-[11px] md:text-[12px] font-black uppercase tracking-[0.16em] text-ink shadow-[4px_4px_0_#15140f] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#fff04d] hover:shadow-[6px_6px_0_#ed6f5c] active:translate-y-0 active:shadow-[2px_2px_0_#15140f] cursor-pointer"
+                  >
+                    <span className="h-2 w-2 bg-coral" />
+                    <span>SOCIAL IMPACT INDEX SII-100 ↗</span>
+                  </button>
+                </div>
+              </div>
+
               <div className="flex flex-wrap items-end justify-between gap-4">
                 <div>
-                  <p className="font-mono text-[9.5px] tracking-[0.2em] text-ink/50 uppercase">
-                    Social Impact Index & Tiering Borsellino
-                  </p>
-                  <p className="mt-2 flex items-baseline gap-3">
-                    <span className="tabnum text-[clamp(2.4rem,6vw,3.6rem)] leading-none font-black tracking-[-0.05em]">
+                  <p className="flex items-baseline gap-3">
+                    <span className="tabnum text-[clamp(2.6rem,6.5vw,3.8rem)] leading-none font-black tracking-[-0.05em] text-ink">
                       {r.indice}
                     </span>
                     <span className="font-mono text-[11px] tracking-[0.16em] text-ink/50 uppercase">/ 100</span>
-                    <span className="border border-coral bg-coral px-2.5 py-1 text-[13px] leading-none font-black text-bone">
+                    <span className="border border-coral bg-coral px-3 py-1 text-[13.5px] leading-none font-black text-bone shadow-[2px_2px_0_#15140f]">
                       {r.rating}
                     </span>
-                    <span className="font-mono text-[11px] font-bold tracking-[0.12em] text-ink uppercase">
+                    <span className="font-mono text-[11.5px] font-bold tracking-[0.12em] text-ink uppercase bg-paper border border-ink/20 px-2.5 py-0.5">
                       Tier: {r.livelloTier}
                     </span>
                   </p>
                 </div>
-                <p className="max-w-[30ch] font-mono text-[10px] leading-relaxed tracking-[0.1em] text-ink/50 uppercase">
-                  Valuta engagement del team, chilometri tolti dalla strada, punti borsellino e sostegno alle Aree Interne.
+                <p className="max-w-[34ch] font-mono text-[10px] leading-relaxed tracking-[0.1em] text-ink/60 uppercase">
+                  Valuta engagement del team, km evitati per i produttori locali, punti borsellino e sostegno alle Aree Interne.
                 </p>
               </div>
 
@@ -565,22 +614,30 @@ export default function Simulator() {
                     className="absolute inset-y-0 left-0 bg-coral transition-[width] duration-700 ease-out"
                     style={{ width: `${Math.min(100, r.indice)}%` }}
                   />
-                  {[25, 50, 75].map((t) => (
-                    <span key={t} className="absolute inset-y-0 w-px bg-ink/30" style={{ left: `${t}%` }} />
+                  {[40, 54, 68, 82].map((t) => (
+                    <span
+                      key={t}
+                      className="absolute inset-y-0 w-px bg-ink/40"
+                      style={{ left: `${t}%` }}
+                      title={`Soglia di scatto: ${t} pt`}
+                    />
                   ))}
                 </span>
                 <div className="mt-1.5 flex justify-between font-mono text-[9px] tracking-[0.14em] text-ink/45 uppercase">
-                  <span>BBB (Partecipante)</span>
-                  <span>A (Territorio Attivo)</span>
-                  <span>A+ (Impatto Condiviso)</span>
-                  <span>A++ (Best Practice)</span>
+                  <span>BBB (&lt;40)</span>
+                  <span>A (≥54 Territorio Attivo)</span>
+                  <span>A+ (≥68 Impatto Condiviso)</span>
+                  <span>A++ (≥82 Main Partner)</span>
                 </div>
+                <p className="mt-2.5 border-t border-ink/10 pt-2 font-mono text-[8.5px] leading-relaxed text-ink/50 uppercase">
+                  Rating normalizzato per singola organizzazione: misura la densità e la qualità del presidio aziendale ed è intrinsecamente indipendente dal numero di imprese target simulate nel portafoglio.
+                </p>
               </div>
 
               {/* ripartizione del valore */}
               <div className="mt-7 border-t border-ink/15 pt-5">
                 <p className="font-mono text-[9.5px] tracking-[0.2em] text-ink/50 uppercase">
-                  Composizione del valore generato (Welfare + Comunicazione + Indotto)
+                  Composizione del valore generato (Esperienze + Comunicazione + Indotto)
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   <div className="border-l-2 border-ink pl-3">
@@ -626,7 +683,7 @@ export default function Simulator() {
                       Valore Servizi Startup per impresa: la cifra di € 1000 è esemplificativa e non rispecchia il valore equivalente, cioè il costo che le imprese spenderebbero per ricevere i medesimi servizi. Soltanto i servizi editoriali per ogni impresa coinvolta superebbe la cifra fissata. I servizi includono: la produzione di tutti i contenuti creativi per essere pubblicati nella piattaforma web dedicata e predisposti per ogni canale, newsletter aziendali, il media kit per la redazione di comunicati stampa, la redazione delle Best Practice, i tool per attestati digitali con hash crittografico, il supporto alla redazione del proprio reporting di Impatto, la comunicazione istituzionale nelle rassegne.
                     </p>
                     <p>
-                      <strong className="text-ink">Moltiplicatore Economico Territoriale (×2,4):</strong> ogni euro in biglietti omaggio attiva un indotto stimato di 2,4 volte a favore delle comunità locali delle Aree Interne marchigiane in pernottamenti, ristorazione e prodotti tipici.
+                      <strong className="text-ink">Moltiplicatore Economico Territoriale (×2,4):</strong> ogni euro in biglietti omaggio attiva effetti indiretti e indotti 2,4 € a favore delle comunità locali delle Aree Interne marchigiane oltre un effetto diretto in pernottamenti, ristorazione e prodotti tipici che in questa stima non viene calcolato. La Startup promotrice ha analizzato e creato internamente molte analisi di economia nell'intersezione tra cultura, turismo e modelli di business multi versante.
                     </p>
                   </div>
                 )}
@@ -650,12 +707,24 @@ export default function Simulator() {
                 >
                   Porta questi numeri all'adesione
                 </button>
-                <Tag className="ml-auto">FR-04 · export dati ESG</Tag>
+                <Tag className="ml-auto">FR-04 · export dati d'impatto</Tag>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Architettura Strategica Incentivi & Borsellino Loyalty */}
+      <LoyaltyArchitectureModal
+        isOpen={openLoyaltyModal}
+        onClose={() => setOpenLoyaltyModal(false)}
+      />
+
+      {/* Standard Tecnico Social Impact Index */}
+      <SocialImpactIndexModal
+        isOpen={openSiiModal}
+        onClose={() => setOpenSiiModal(false)}
+      />
     </section>
   );
 }

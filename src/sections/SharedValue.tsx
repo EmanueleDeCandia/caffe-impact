@@ -17,10 +17,10 @@ const DESTINATARI = [
     idx: "B",
     chi: "Alle vostre persone",
     metrica: "100%",
-    metricaLabel: "welfare culturale ed esperienziale diffuso",
+    metricaLabel: "benefici ed esperienze d'autore per il tempo libero",
     voce: [
       "5 Biglietti Omaggio Performing Art ogni 1.000 erogazioni",
-      "Attestato nominale di impatto con hash e marcatura temporale",
+      "Attestato nominale di partecipazione e valore territoriale",
       "Convenzioni di soggiorno e cene nei 24 Comuni delle Aree Interne",
     ],
     tone: "coral" as const,
@@ -66,15 +66,14 @@ export default function SharedValue() {
               tornano indietro.
             </h2>
             <p data-reveal="up" className="mt-6 max-w-md text-[15.5px] leading-relaxed text-inksoft/85">
-              Non è filantropia aziendale e non è un costo nuovo: è la stessa erogazione letta da tre punti di
-              vista. Il dato nasce nel distributore del vostro presidio e si divide in rendicontazione per la
-              direzione, welfare per le persone, risorse per i luoghi. A voi interessa soprattutto la prima
-              colonna — ma è dalle altre due che arriva la forza del racconto.
+              Non è filantropia e non è un costo nuovo: è la stessa erogazione letta da tre punti di
+              vista. Il consumo ordinario nel vostro presidio o distributore si traduce in relazioni e Best Practice per la
+              direzione, esperienze d'autore per le vostre persone, risorse concrete per i luoghi. A voi interessa valorizzare l'impresa — ed è da questo equilibrio che nasce un impatto autentico.
             </p>
             <div data-reveal="up" className="mt-7 flex flex-wrap gap-3">
-              <Tag>Doppia materialità</Tag>
-              <Tag>Welfare non monetario</Tag>
-              <Tag>Rigenerazione territoriale</Tag>
+              <Tag>Best Practice territoriale</Tag>
+              <Tag>Incentivi esperienziali</Tag>
+              <Tag>Rigenerazione delle Aree Interne</Tag>
             </div>
           </div>
 

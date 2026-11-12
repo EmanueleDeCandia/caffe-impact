@@ -5,7 +5,7 @@ import { DOCUMENTS, FAQ, ROADMAP } from "@/lib/data";
 const DOC_ABSTRACT: Record<string, { abstract: string; contenuti: string[] }> = {
   "DOC-01": {
     abstract:
-      "Il documento che i vostri revisori chiederanno: perimetro, metodologia di calcolo, indicatori ambientali e sociali, doppia materialità e confronto con l'anno precedente, redatto sui vostri presidi.",
+      "Il documento per i revisori delle imprese che non conoscono i benefici della Corporate Social Responsibility: perimetro, metodologia di calcolo, indicatori ambientali e sociali, doppia materialità e confronto con l'anno precedente, preparato per una prima redazione semplificata.",
     contenuti: [
       "Perimetro di rendicontazione e presidi inclusi",
       "Indicatori GRI 305-1, 305-4 e metriche CSRD E1-6",
@@ -209,7 +209,7 @@ export default function Compliance() {
                 vostro tempo.
               </>
             }
-            lead="Il calendario è il nostro, non il vostro. Qui sotto trovate per ogni fase l'impegno reale richiesto al referente aziendale: è l'argomento più concreto che possiamo portarvi."
+            lead="Il calendario. Per ogni fase viene evidenziato l'impegno reale richiesto al referente aziendale: è l'argomento più concreto dell'impegno richiesto."
           />
 
           <ol className="mt-14 relative border-l border-dashed border-ink/30 pl-6 md:pl-10">

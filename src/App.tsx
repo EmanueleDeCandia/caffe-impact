@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { LiveDot } from "@/components/ui";
 import { useRevealObserver, useScrollProgress } from "@/hooks/useReveal";
 import Cover from "@/sections/Cover";
+import ValoreAggiunto from "@/sections/ValoreAggiunto";
 import SharedValue from "@/sections/SharedValue";
 import Value from "@/sections/Value";
 import Simulator from "@/sections/Simulator";
@@ -13,13 +14,14 @@ import Adesione from "@/sections/Adesione";
 import Footer from "@/sections/Footer";
 
 const NAV = [
-  ["patto", "I · Il patto"],
-  ["simulatore", "II · Simulatore"],
-  ["filiera", "III · Filiera"],
-  ["piattaforme", "IV · Piattaforme"],
-  ["territorio", "V · Territorio"],
-  ["rendicontazione", "VI · ESG"],
-  ["attivazione", "VII · Attivazione"],
+  { id: "valore-aggiunto", label: "Valore", num: "" },
+  { id: "patto", label: "Il patto", num: "I ·" },
+  { id: "simulatore", label: "Simulatore", num: "II ·" },
+  { id: "filiera", label: "Filiera", num: "III ·" },
+  { id: "piattaforme", label: "Piattaforme", num: "IV ·" },
+  { id: "territorio", label: "Territorio", num: "V ·" },
+  { id: "rendicontazione", label: "Best Practice", num: "VI ·" },
+  { id: "attivazione", label: "Attivazione", num: "VII ·" },
 ];
 
 function Nav() {
@@ -28,7 +30,7 @@ function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const ids = ["copertina", ...NAV.map((n) => n[0]), "domande", "adesione"];
+    const ids = ["copertina", ...NAV.map((n) => n.id), "domande", "adesione"];
     const els = ids
       .map((id) => document.getElementById(id))
       .filter((e): e is HTMLElement => Boolean(e));
@@ -58,15 +60,16 @@ function Nav() {
           </a>
 
           <nav aria-label="Sezioni del dossier" className="ml-auto hidden items-center gap-5 xl:flex">
-            {NAV.map(([id, label]) => (
+            {NAV.map(({ id, label, num }) => (
               <a
                 key={id}
                 href={`#${id}`}
-                className={`relative font-mono text-[9.5px] tracking-[0.18em] uppercase transition-colors duration-300 ${
+                className={`relative flex flex-col font-mono text-[9.5px] tracking-[0.18em] uppercase transition-colors duration-300 ${
                   active === id ? "text-coral" : "text-ink/55 hover:text-ink"
                 }`}
               >
-                {label}
+                {num && <span className="text-[8.5px] leading-tight text-ink/45">{num}</span>}
+                <span className="whitespace-nowrap leading-tight">{label}</span>
                 <span
                   className={`absolute -bottom-1.5 left-0 h-px bg-coral transition-[width] duration-500 ${
                     active === id ? "w-full" : "w-0"
@@ -125,22 +128,25 @@ function Nav() {
         }`}
       >
         <ul className="mx-auto grid max-w-[1400px] gap-px bg-ink/10 px-5 sm:grid-cols-2 md:px-10">
-          {[["copertina", "Copertina"], ...NAV, ["domande", "VIII · Domande"], ["adesione", "IX · Adesione"]].map(
-            ([id, label]) => (
-              <li key={id} className="bg-paper">
-                <a
-                  href={`#${id}`}
-                  onClick={() => setOpen(false)}
-                  className={`flex items-center justify-between px-1 py-3 font-mono text-[10px] tracking-[0.18em] uppercase transition-colors ${
-                    active === id ? "text-coral" : "text-ink/65"
-                  }`}
-                >
-                  {label}
-                  <span className="text-ink/25">→</span>
-                </a>
-              </li>
-            ),
-          )}
+          {[
+            { id: "copertina", label: "Copertina" },
+            ...NAV.map((n) => ({ id: n.id, label: n.num ? `${n.num} ${n.label}` : n.label })),
+            { id: "domande", label: "VIII · Domande" },
+            { id: "adesione", label: "IX · Adesione" },
+          ].map(({ id, label }) => (
+            <li key={id} className="bg-paper">
+              <a
+                href={`#${id}`}
+                onClick={() => setOpen(false)}
+                className={`flex items-center justify-between px-1 py-3 font-mono text-[10px] tracking-[0.18em] uppercase transition-colors ${
+                  active === id ? "text-coral" : "text-ink/65"
+                }`}
+              >
+                {label}
+                <span className="text-ink/25">→</span>
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -162,6 +168,7 @@ export default function App() {
       <Nav />
       <main>
         <Cover />
+        <ValoreAggiunto />
         <SharedValue />
         <Value />
         <Simulator />

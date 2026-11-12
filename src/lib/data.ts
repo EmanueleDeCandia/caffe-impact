@@ -17,11 +17,11 @@ export const IMG = {
 
 export const TICKER = [
   "EROGAZIONE #48291 · PRESIDIO ASCOLI-02 · SPEDIZIONE KM 0 AZZERATA · CO₂ EVITATA",
-  "ATTESTATO WELFARE RILASCIATO · MATR. AGGREGATA · SHA 9f3c…a41d",
+  "PREMIO ESPERIENZIALE ASSEGNATO · MATR. AGGREGATA · SHA 9f3c…a41d",
   "CONSEGNA AGROALIMENTARE A KM 0 (L. 61/2022) · PRODUTTORE LOCALE → SEDE AZIENDALE",
   "FESTIVAL DELLE VALLI MARCHIGIANE · OBIETTIVO RASSEGNA 74% · BIGLIETTI DISPONIBILI",
-  "RISCATTO BORSELLINO · 5 BIGLIETTI TEATRO · DIP. LOGISTICA",
-  "DATASET CSRD ESRS E1 · PRECOMPILATO ORE 06:12",
+  "RISCATTO BORSELLINO · 5 TITOLI ESPERIENZIALI · DIP. LOGISTICA",
+  "ATTESTAZIONE BEST PRACTICE TERRITORIALE · ORE 06:12",
   "FESTIVAL DEI BORGHI SIBILLINI · RETE 6 COMUNI PARTNER · ACCESSO VIP RISERVATO",
 ];
 
@@ -38,7 +38,7 @@ export const LIVE_KPIS: LiveKpi[] = [
   { label: "Erogazioni tracciate", value: 486200, suffix: "", decimals: 0, note: "dal 01.01 · presidi OCS e Vending" },
   { label: "Km di trasporto evitati", value: 62400, suffix: "", decimals: 0, note: "prodotti a Km 0 su flotta Illiria" },
   { label: "CO₂ evitata", value: 17472, suffix: " kg", decimals: 0, note: "consegne dedicate azzerate" },
-  { label: "Valore complessivo", value: 248900, prefix: "€ ", decimals: 0, note: "welfare, comunicazione e indotto" },
+  { label: "Valore complessivo", value: 248900, prefix: "€ ", decimals: 0, note: "esperienze, comunicazione e indotto" },
 ];
 
 export type Benefit = {
@@ -53,19 +53,19 @@ export type Benefit = {
 export const BENEFITS: Benefit[] = [
   {
     n: "01",
-    titolo: "Una sezione importante per il bilancio di sostenibilità",
+    titolo: "Dati primari per valorizzare la Best Practice aziendale",
     testo:
-      "Il saldo delle erogazioni viene letto, inviato con un trigger alla web app e aggregato per presidio. La Dashboard Manager produce gli indicatori conformi agli standard di Reporting ESRS con le rispettive metriche di impatto ambientale - km evitati per la filiera corta - e sociale - valorizzazione delle comunità locali - predisposti per l'audit di sostenibilità e la rendicontazione.",
-    perVoi: "Report ESG pronti in un clic · export PDF e CSV",
+      "Il saldo delle erogazioni viene letto, inviato con un trigger alla web app e aggregato per presidio. La Dashboard Manager produce indicatori di impatto ambientale — km evitati per la filiera corta — e territoriale — sostegno concreto alle comunità locali — predisposti per documentare e comunicare la Best Practice aziendale in modo rigoroso, trasparente e privo di greenwashing.",
+    perVoi: "Dati d'impatto verificati · export PDF e CSV",
     metrica: "−92%",
-    metricLabel: "ore-uomo sulla raccolta dati non finanziari",
+    metricLabel: "ore-uomo azzerate nella raccolta dati d'impatto",
   },
   {
     n: "02",
-    titolo: "Welfare aziendale generato dal consumo che già fate",
+    titolo: "Premi esperienziali generati dal consumo di sempre",
     testo:
-      "Il caffè che i vostri dipendenti bevono ogni mattina viene convertito in crediti di welfare culturale: biglietti agevolati per teatro, concerti, percorsi naturalistici e siti recuperati nei borghi. Il piano welfare si alimenta da un'abitudine esistente, senza una voce di budget aggiuntiva.",
-    perVoi: "Budget welfare incrementale: € 0 · crediti non monetari",
+      "Il caffè che le vostre persone bevono ogni mattina viene convertito in titoli d'accesso ed esperienze nei borghi: spettacoli dal vivo, concerti, aperitivi d'autore e convenzioni nei territori delle Marche. Un programma di gratificazione che valorizza il tempo libero senza costi organizzativi per l'azienda.",
+    perVoi: "Nessun costo organizzativo aggiuntivo · esperienze reali",
     metrica: ">45%",
     metricLabel: "tasso di riscatto target entro 6 mesi",
   },
@@ -76,23 +76,23 @@ export const BENEFITS: Benefit[] = [
       "Sull'app i vostri collaboratori vedono il bilancio personale di impatto, collezionano badge e certificati numerati, seguono le iniziative che stanno sostenendo. È gamification etica: non premia chi consuma di più, ma rende visibile il valore che il gruppo produce insieme.",
     perVoi: "Engagement misurabile · clima interno e retention",
     metrica: "3,4×",
-    metricLabel: "frequenza di accesso all'app rispetto ai portali welfare tradizionali",
+    metricLabel: "frequenza di accesso all'app rispetto ai portali convenzionali",
   },
   {
     n: "04",
-    titolo: "Chilometri tolti dalla strada, non promesse",
+    titolo: "Chilometri evitati per i Produttori a Km 0",
     testo:
       "I prodotti agroalimentari a Km 0 (L. 61/2022) viaggiano a bordo della flotta Illiria già attiva per il rifornimento OCS e Vending. Nessun furgone aggiuntivo sulla strada: azzeriamo i chilometri delle consegne dedicate dei produttori locali, tagliando costi di trasporto ed emissioni climalteranti.",
-    perVoi: "Riduzione Scope 3 tracciabile e pronta per il bilancio",
+    perVoi: "Percorrenze logistiche azzerate e tracciabili",
     metrica: "100%",
     metricLabel: "di percorrenza logistica dedicata evitata",
   },
   {
     n: "05",
-    titolo: "Il vostro nome accanto alla rinascita dei borghi",
+    titolo: "Networking d'impresa e presenza attiva nei borghi",
     testo:
-      "Dalle Valli del Metauro ai Monti Sibillini, fino al Piceno e ai Monti Azzurri: sostenete rassegne e festival di Performing Art in reti di almeno 6 Comuni delle Aree Interne. La Startup fornisce kit di comunicazione, earned media sui quotidiani regionali e visibilità ufficiale.",
-    perVoi: "Storytelling territoriale · earned media e rassegna stampa",
+      "Dalle Valli del Metauro ai Monti Sibillini, fino al Piceno e ai Monti Azzurri: sostenete rassegne e festival di Performing Art in reti di 24 Comuni delle Aree Interne. La Startup cura l'inserimento nel Libro Bianco delle Best Practice, rassegna stampa qualificata e occasioni di business networking tra imprenditori del territorio.",
+    perVoi: "Networking tra pari · presenza nel Libro Bianco",
     metrica: "24",
     metricLabel: "Comuni delle Aree Interne marchigiane in rete",
   },
@@ -100,7 +100,7 @@ export const BENEFITS: Benefit[] = [
     n: "06",
     titolo: "Adesione senza progetto IT e senza rischi sulla privacy",
     testo:
-      "I distributori sono già connessi: l'attivazione è configurazione, non integrazione. L'app è una PWA installabile, l'accesso avviene con SSO aziendale e i consumi sono trattati solo in forma aggregata per matricola o reparto, secondo il perimetro GDPR che firmiamo con voi.",
+      "Distributori o OCS non sono toccati: l'app è una PWA installabile e riceve un unico dato, quello del superamento delle soglie di consumo con cui scattano i premi. L'accesso avviene con SSO aziendale e i consumi sono trattati solo in forma aggregata, secondo il perimetro GDPR che firmiamo con voi.",
     perVoi: "Nessun ticket al vostro reparto sistemi informativi",
     metrica: "2 ore",
     metricLabel: "impegno richiesto al vostro referente HR",
@@ -112,15 +112,15 @@ export const LEDGER = {
     "Il consumo di caffè e presidi che già avete nella vostra sede",
     "Un referente HR o Facility (≈ 2 ore di configurazione iniziale)",
     "Le credenziali SSO per l'accesso dei collaboratori alla Web App",
-    "La scelta dei festival e delle rassegne da sostenere",
+    "La scelta dei festival e delle rassegne da sostenere con il voto",
     "La disponibilità a valorizzare le Best Practice aziendali",
   ],
   noi: [
     "Logistica combinata con paniere agroalimentare a Km 0 (L. 61/2022)",
     "Borsellino Aziendale e Web App con sistema di voto per il team",
     "Attestati digitali di partecipazione con hash e marcatura temporale",
-    "Biglietteria omaggio Performing Art e convenzioni fornite dalla Startup",
-    "Dataset precompilato GRI / CSRD e supporto all'audit di sostenibilità",
+    "Titoli d'accesso omaggio Performing Art e convenzioni fornite dalla Startup",
+    "Documentazione d'impatto verificata e supporto alla comunicazione delle Best Practice",
     "Kit di comunicazione: totem area break, locandine e rassegna stampa",
   ],
 };
@@ -129,7 +129,7 @@ export const FILIERA = [
   {
     n: "I",
     titolo: "Paniere Prodotti Agroalimentari a Km 0",
-    testo: "Specialità locali selezionate entro 70 km dalla vostra sede (L. 61/2022), integrate nei percorsi ordinari di fornitura Illiria senza spese di trasporto.",
+    testo: "Specialità locali selezionate entro 70 km dalla vostra sede (L. 61/2022), integrate nei percorsi ordinari di fornitura Illiria con sconti dedicati sul riordino.",
     sforzo: "Sforzo cliente: nessuno",
     tag: "Km 0 (L. 61/2022) · Raggio 70 km",
   },
@@ -149,17 +149,17 @@ export const FILIERA = [
   },
   {
     n: "IV",
-    titolo: "Biglietti Omaggio e Welfare Territoriale",
-    testo: "La Startup eroga ai dipendenti biglietti omaggio per spettacoli dal vivo e convenzioni di soggiorno nei borghi delle Marche finanziati dai consumi.",
+    titolo: "Pass Esperienziali e Convivialità nei Borghi",
+    testo: "La Startup eroga ai collaboratori titoli d'accesso per spettacoli dal vivo, convenzioni nei borghi e opportunità di micro-eventi aziendali deducibili.",
     sforzo: "Sforzo cliente: comunicazione interna",
     tag: "Performing art nelle Marche",
   },
   {
     n: "V",
-    titolo: "Reporting d'Impatto e Visibilità Istituzionale",
-    testo: "Dati primari pronti per il bilancio ESG forniti dalla Startup, attestati nominali per il team e visibilità come Main Partner sui media regionali.",
+    titolo: "Best Practice Attestata e Presenza Territoriale",
+    testo: "Dati d'impatto autentici per raccontare la Best Practice aziendale, attestati per il team e visibilità nel Libro Bianco delle Aree Interne.",
     sforzo: "Sforzo cliente: download dossier",
-    tag: "Audit ready · GRI / CSRD",
+    tag: "Impatto reale · Best Practice",
   },
 ];
 
@@ -309,19 +309,19 @@ export const ROADMAP = [
 export const FAQ = [
   {
     q: "Quanto costa attivare Illiria Coffee Impact?",
-    a: "Nessun costo o canone aggiuntivo. La fornitura dei prodotti agroalimentari a Km 0, l'accesso al Borsellino Aziendale, i biglietti omaggio erogati dalla Startup e il dataset per la rendicontazione ESG sono integrati nella partnership di fornitura OCS e Vending.",
+    a: "Nessun costo nascosto né spesa aggiuntiva. La fornitura dei prodotti agroalimentari a Km 0, l'accesso al Borsellino Aziendale, i titoli omaggio erogati dalla Startup e i dati verificati per attestare la Best Practice aziendale sono integrati nella partnership di fornitura OCS e Vending.",
   },
   {
-    q: "È necessario essere già clienti di Gruppo Illiria per partecipare?",
+    q: "È necessario essere già clienti del fornitore convenzionato per partecipare?",
     a: "No, il programma è aperto a ogni tipo di impresa che desidera valorizzare le Aree Interne marchigiane e rafforzare il proprio profilo di sostenibilità, sia per soluzioni OCS (uffici e studi) sia per distributori Vending. L'iniziativa accoglie clienti attuali, nuove realtà aziendali ed ex clienti (campagna Win-Back) che intendono riattivare o qualificare la fornitura su basi etiche. Verrà inviata una presentazione con invito prioritario a tutte le imprese situate nei bacini degli spettacoli, in particolare nelle province di Macerata, Fermo e Ascoli Piceno.",
   },
   {
     q: "Come funziona la filiera dei produttori a Km 0 e perché è a impatto logistico zero?",
-    a: "I prodotti agroalimentari a filiera corta (L. 61/2022, entro 70 km) vengono valorizzati senza alcun ricarico o margine aggiuntivo da parte di Gruppo Illiria né dei promotori: l'intero valore sostiene direttamente i coltivatori e i trasformatori del territorio marchigiano. I cestini vengono recapitati in azienda sfruttando esclusivamente i tragitti ordinari della flotta Illiria già programmati per i rifornimenti di caffè. In questo modo le persone ricevono le eccellenze del territorio senza fare una mossa dall'azienda, azzerando le emissioni di corrieri dedicati ed evitando decine di chilometri di trasporto su gomma per ogni consegna.",
+    a: "I prodotti agroalimentari a filiera corta (L. 61/2022, entro 70 km) vengono valorizzati senza alcun ricarico o margine aggiuntivo da parte del gestore né dei promotori: l'intero valore sostiene direttamente i coltivatori e i trasformatori del territorio marchigiano. I cestini vengono recapitati in azienda sfruttando esclusivamente i tragitti ordinari della flotta già programmati per i rifornimenti di caffè. In questo modo le persone ricevono le eccellenze del territorio senza fare una mossa dall'azienda, azzerando le emissioni di corrieri dedicati ed evitando decine di chilometri di trasporto su gomma per ogni consegna.",
   },
   {
     q: "Come funzionano i biglietti omaggio e gli incentivi per i collaboratori?",
-    a: "Ogni 1.000 erogazioni maturate nel Borsellino, la Startup mette a disposizione 2 Biglietti Invito VIP e 3 Biglietti normali per le rassegne e i festival di Performing Art nelle Marche, con proporzione analoga per volumi crescenti (1.500, 2.000, 3.000+ erogazioni). A questi si affiancano convenzioni ricettive nei 24 Comuni partner e la possibilità di partecipare agli speciali Aperitivi-Cena pre-spettacolo insieme agli artisti, trasformando la pausa caffè in autentico welfare culturale condiviso.",
+    a: "Ogni 1.000 erogazioni maturate nel Borsellino, la Startup mette a disposizione 2 Biglietti Invito VIP e 3 Biglietti normali per le rassegne e i festival di Performing Art nelle Marche, con proporzione analoga per volumi crescenti (1.500, 2.000, 3.000+ erogazioni). A questi si affiancano convenzioni ricettive nei 24 Comuni partner e la possibilità di partecipare agli speciali Aperitivi-Cena pre-spettacolo insieme agli artisti, trasformando la pausa caffè in autentico valore esperienziale condiviso.",
   },
   {
     q: "Perché il progetto sostiene le Performing Art e i Comuni delle Aree Interne?",
@@ -418,20 +418,45 @@ export function calcolaImpattoAvanzato({
   const indottoLocale = Math.round(valoreBiglietti * MODEL.moltiplicatoreIndottoLocale);
   const valoreTotale = valoreBiglietti + valoreServizi + indottoLocale;
 
-  let livelloTier = "Partecipante";
-  if (puntiBorsellino >= 1000) livelloTier = "Main Partner Aree Interne";
-  else if (puntiBorsellino >= 500) livelloTier = "Best Practice Territoriale";
-  else if (puntiBorsellino >= 250) livelloTier = "Impatto Condiviso";
-  else if (puntiBorsellino >= 100) livelloTier = "Territorio Attivo";
+  const puntiBorsellinoSito = Math.floor(erogazioniSito / 100);
 
-  const punteggio =
-    Math.min(35, (biglietti / Math.max(consumatoriAttivi, 1)) * 12) +
-    Math.min(30, (co2Evitata / Math.max(consumatoriAttivi, 1)) * 3) +
-    Math.min(20, Math.min(20, (totaleImpreseTarget / 150) * 20)) +
-    Math.min(15, presidiAttiviSito >= 2 ? 15 : presidiAttiviSito * 7.5);
-  const indice = Math.min(100, Math.max(10, Math.round(punteggio)));
+  // Calcolo coerente e rigorosamente monotonico del Social Impact Index (0 - 100)
+  // 1. Comunità aziendale ed Engagement del team (0 - 30 pt):
+  //    - Tasso di penetrazione dipendenti (0 - 20 pt): cresce sempre con la percentuale di persone attive
+  //    - Dimensione della comunità (0 - 10 pt): premia la scala del personale coinvolto nel presidio
+  const ptPenetrazione = presidiAttiviSito > 0 ? (penetrazionePct / 100) * 20 : 0;
+  const ptScala = presidiAttiviSito > 0 ? Math.min(10, 2 + (Math.min(dipendenti, 500) / 500) * 8) : 0;
+  const ptComunita = ptPenetrazione + ptScala;
+
+  // 2. Intensità di consumo ed erogazioni (0 - 25 pt): cresce monotonicamente con i caffè al giorno pro capite
+  const ptConsumo = presidiAttiviSito > 0 ? Math.min(25, (caffeGiorno / 4) * 25) : 0;
+
+  // 3. Sostenibilità logistica e filiera a Km 0 (0 - 25 pt): flotta combinata e km evitati ai produttori locali
+  const ptLogistica = presidiAttiviSito > 0 ? 10 + Math.min(15, (distanzaKm0 / 70) * 15) : 0;
+
+  // 4. Copertura infrastrutturale dei presidi nella sede (0 - 20 pt): premia la capillarità OCS e Vending
+  let ptPresidi = 0;
+  if (presidiAttiviSito > 0) {
+    if (presidiOcs > 0 && presidiVending > 0) {
+      ptPresidi = Math.min(20, 14 + Math.min(6, (presidiAttiviSito - 2) * 1.5));
+    } else {
+      ptPresidi = Math.min(13, 8 + Math.min(5, (presidiAttiviSito - 1) * 1.5));
+    }
+  }
+
+  // Punteggio complessivo normalizzato per singola impresa (30 + 25 + 25 + 20 = 100 pt max)
+  const punteggio = ptComunita + ptConsumo + ptLogistica + ptPresidi;
+  const indice = presidiAttiviSito === 0 ? 10 : Math.min(100, Math.max(10, Math.round(punteggio)));
   const rating =
     indice >= 82 ? "A++" : indice >= 68 ? "A+" : indice >= 54 ? "A" : indice >= 40 ? "BBB+" : "BBB";
+
+  // Calcolo del Tier rigorosamente allineato alle soglie e alle regole del Social Impact Index (SII-100)
+  let livelloTier = "Partecipante";
+  if (indice >= 82) livelloTier = "Main Partner Aree Interne";
+  else if (indice >= 68) livelloTier = "Impatto Condiviso";
+  else if (indice >= 54) livelloTier = "Territorio Attivo";
+  else if (indice >= 40) livelloTier = "Partecipante Consolidato";
+  else livelloTier = "Partecipante";
 
   return {
     erogazioni,

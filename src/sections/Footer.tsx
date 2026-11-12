@@ -31,9 +31,9 @@ export default function Footer() {
           items={[
             "VALORE CONDIVISO",
             "PRODOTTI TIPICI A KM 0 (L. 61/2022)",
-            "WELFARE CULTURALE",
+            "BENEFICI ESPERIENZIALI",
             "PERFORMING ART NELLE MARCHE",
-            "RENDICONTAZIONE CSRD",
+            "BEST PRACTICE ATTESTATA",
           ]}
           className="outline-marquee text-transparent"
           itemClassName="gap-10 font-display text-[clamp(1.8rem,6vw,4.4rem)] leading-none font-black tracking-[-0.04em] uppercase"
@@ -43,15 +43,15 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-5 py-16 md:px-10 md:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
-            <p className="font-mono text-[10px] tracking-[0.24em] text-coral uppercase">Gruppo Illiria S.p.A.</p>
+            <p className="font-mono text-[10px] tracking-[0.24em] text-coral uppercase">Shared Value</p>
             <p className="mt-4 text-[clamp(1.9rem,4.4vw,3rem)] leading-[0.92] font-black tracking-[-0.045em] uppercase">
-              Illiria
+              Shared Value
               <br />
               Coffee <span className="font-editorial font-medium text-coral normal-case italic">Impact</span>
             </p>
             <p className="mt-6 max-w-sm text-[14.5px] leading-relaxed text-bone/60">
-              La pausa caffè della vostra azienda come leva di welfare, di rendicontazione ESG e di
-              rigenerazione territoriale. Un progetto di valore condiviso, misurato erogazione per erogazione.
+              La pausa caffè della vostra azienda come leva di rewarding esperienziale, Best Practice territoriale e
+              valorizzazione della filiera a Km 0. Un progetto di valore condiviso, misurato erogazione per erogazione.
             </p>
             <a
               href="#adesione"
@@ -83,22 +83,22 @@ export default function Footer() {
           ))}
 
           <div className="lg:col-span-3">
-            <p className="font-mono text-[9.5px] tracking-[0.22em] text-bone/45 uppercase">Direzione Impact</p>
+            <p className="font-mono text-[9.5px] tracking-[0.22em] text-bone/45 uppercase">Shared Value</p>
             <ul className="mt-5 space-y-3 text-[13.5px] text-bone/80">
               <li>
-                <a href="mailto:impact@illiria.it" className="link-underline hover:text-coral">
-                  impact@illiria.it
+                <a href="mailto:sharedvalue@innovadante.com" className="link-underline hover:text-coral">
+                  sharedvalue@innovadante.com
                 </a>
               </li>
               <li>
-                <a href="tel:+390851234567" className="link-underline hover:text-coral">
-                  +39 085 123 4567
+                <a href="tel:+390734123456" className="link-underline hover:text-coral">
+                  +39 0734 123 456
                 </a>
               </li>
               <li className="pt-2 text-bone/55">
-                Sede operativa e tostatura di prossimità
+                Sede operativa
                 <br />
-                Strada per la Val Pescara, 44 — 65129 Pescara
+                Via Antonio Perpenti, 24 — 63900 Fermo
               </li>
               <li className="pt-2 font-mono text-[9.5px] tracking-[0.14em] text-bone/45 uppercase">
                 Lun—Ven 08:00 / 18:00 · assistenza presidi h24
@@ -107,8 +107,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-4 border-t border-bone/20 pt-6 font-mono text-[9.5px] leading-relaxed tracking-[0.14em] text-bone/45 uppercase md:grid-cols-3">
-          <p>© 2026 Gruppo Illiria S.p.A. · P.IVA 01234567890 · Documento PRD-ICI-2024-V1</p>
+        {/* Disclaimer legale soft in coral */}
+        <div className="mt-12 border-t border-bone/15 pt-5 text-center">
+          <p className="mx-auto max-w-4xl font-mono text-[9.5px] leading-relaxed tracking-[0.12em] text-coral uppercase">
+            Disclaimer: La Startup Innovativa GIORGI&amp;CO. S.R.L. esonera da ogni responsabilità giuridica il Gruppo Illiria S.p.A. e lo menziona a puro titolo dimostrativo ed esemplificativo dell'iniziativa.
+          </p>
+        </div>
+
+        <div className="mt-6 grid gap-4 border-t border-bone/15 pt-6 font-mono text-[9.5px] leading-relaxed tracking-[0.14em] text-bone/45 uppercase md:grid-cols-3">
+          <p>© 2026 Shared Value</p>
           <p className="md:text-center">
             Design system Atelier Zero · Inter Tight / Playfair Display / JetBrains Mono
           </p>

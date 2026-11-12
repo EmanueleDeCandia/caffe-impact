@@ -25,16 +25,16 @@ const DOC_ROW = [
 
 function PhoneMock() {
   return (
-    <div className="relative mx-auto w-full max-w-[300px] border-[3px] border-ink bg-bone shadow-[14px_14px_0_rgba(237,111,92,0.28)]">
-      <div className="flex items-center justify-between border-b border-ink/20 px-4 py-2 font-mono text-[9px] tracking-[0.14em] text-ink/55 uppercase">
+    <div className="relative mx-auto w-full max-w-[300px] border-[3px] border-ink bg-bone text-ink shadow-[14px_14px_0_rgba(237,111,92,0.28)]">
+      <div className="flex items-center justify-between border-b border-ink/20 px-4 py-2 font-mono text-[9px] tracking-[0.14em] text-ink/65 uppercase">
         <span>09:41</span>
         <span className="flex items-center gap-1.5 text-coral">
-          <LiveDot /> SSO illiria
+          <LiveDot /> SSO aziendale
         </span>
       </div>
       <div className="px-4 py-4">
-        <p className="font-mono text-[9px] tracking-[0.2em] text-ink/50 uppercase">Dashboard impatto · Km 0</p>
-        <p className="mt-1 text-[19px] leading-tight font-black tracking-[-0.03em] uppercase">
+        <p className="font-mono text-[9px] tracking-[0.2em] text-ink/60 uppercase">Dashboard impatto · Km 0</p>
+        <p className="mt-1 text-[19px] leading-tight font-black tracking-[-0.03em] text-ink uppercase">
           Ciao Marco,
           <br />
           <span className="font-editorial text-[17px] font-medium text-coral normal-case italic">
@@ -43,14 +43,14 @@ function PhoneMock() {
         </p>
         <div className="mt-3 grid grid-cols-2 gap-2">
           {[
-            { k: "CO₂ evitata", v: "18,4 kg" },
-            { k: "Km risparmiati", v: "212 km" },
-            { k: "Crediti welfare", v: "1.460" },
-            { k: "Badge raccolti", v: "7 / 12" },
+            { k: "CO₂ evitata", v: "3.600 kg" },
+            { k: "Km risparmiati", v: "12.000 km" },
+            { k: "Premi maturati", v: "€ 375" },
+            { k: "Badge raccolti", v: "9 / 12" },
           ].map((x) => (
             <div key={x.k} className="border border-ink/20 bg-paper p-2.5">
-              <p className="font-mono text-[8px] tracking-[0.12em] text-ink/50 uppercase">{x.k}</p>
-              <p className="tabnum mt-1 text-[15px] font-extrabold tracking-[-0.02em]">{x.v}</p>
+              <p className="font-mono text-[8px] tracking-[0.12em] text-ink/60 uppercase">{x.k}</p>
+              <p className="tabnum mt-1 text-[15px] font-extrabold tracking-[-0.02em] text-ink">{x.v}</p>
             </div>
           ))}
         </div>
@@ -71,11 +71,11 @@ function PhoneMock() {
           />
           <div className="bg-paper p-3">
             <p className="font-mono text-[8px] tracking-[0.16em] text-coral uppercase">Rassegna in corso</p>
-            <p className="mt-1 text-[12.5px] leading-tight font-extrabold tracking-[-0.02em]">
+            <p className="mt-1 text-[12.5px] leading-tight font-extrabold tracking-[-0.02em] text-ink">
               Performing Art delle Valli Marchigiane · Rete 6 Comuni
             </p>
-            <p className="mt-1.5 font-mono text-[8px] tracking-[0.1em] text-ink/50 uppercase">
-              1.000 erogazioni · 5 biglietti omaggio · 43.7262° N
+            <p className="mt-1.5 font-mono text-[8px] tracking-[0.1em] text-ink/60 uppercase">
+              5.000 erogazioni · 25 biglietti omaggio · 43.7262° N
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ function DesktopMock() {
           ))}
         </span>
         <span className="font-mono text-[9.5px] tracking-[0.16em] text-bone/55 uppercase">
-          impact.illiria.it / manager / panoramica
+          sharedvalue.innovadante.com / manager / panoramica
         </span>
         <span className="ml-auto flex items-center gap-2 font-mono text-[9px] tracking-[0.14em] text-coral uppercase">
           <LiveDot /> sync 06:12
@@ -106,7 +106,7 @@ function DesktopMock() {
       </div>
       <div className="grid gap-0 md:grid-cols-[132px_1fr]">
         <nav className="hidden border-r border-bone/15 p-3 md:block">
-          {["Panoramica", "Report ESG", "Progetti", "Welfare", "Presidi", "Documenti"].map((v, i) => (
+          {["Panoramica", "Best Practice", "Progetti", "Esperienze", "Presidi", "Documenti"].map((v, i) => (
             <p
               key={v}
               className={`border-l-2 py-1.5 pl-2.5 font-mono text-[9px] tracking-[0.14em] uppercase ${i === 0 ? "border-coral text-bone" : "border-transparent text-bone/45"
@@ -121,8 +121,8 @@ function DesktopMock() {
             {[
               { k: "Unità Impact", v: "88.412" },
               { k: "Social Impact Index", v: "A++" },
-              { k: "Welfare distribuito", v: "€ 1.768" },
-              { k: "Riscatto crediti", v: "51%" },
+              { k: "Esperienze e premi", v: "€ 1.768" },
+              { k: "Riscatto premi", v: "51%" },
             ].map((x) => (
               <div key={x.k} className="border border-bone/20 bg-ink p-3 transition-colors hover:border-coral">
                 <p className="font-mono text-[8px] tracking-[0.14em] text-bone/45 uppercase">{x.k}</p>
@@ -213,7 +213,7 @@ function ImprenditoreMock() {
           ))}
         </span>
         <span className="font-mono text-[9.5px] tracking-[0.16em] text-bone/55 uppercase">
-          impact.illiria.it / rassegna / status-imprenditore
+          sharedvalue.innovadante.com / rassegna / status-imprenditore
         </span>
         <span className="ml-auto font-mono text-[8.5px] tracking-[0.12em] text-coral uppercase">
           Riconoscimento attivo
@@ -253,8 +253,8 @@ function ImprenditoreMock() {
               Premiazione ufficiale e consegna della targa d'autore in ceramica/legno alla serata d'apertura.
             </div>
             <div className="border border-bone/10 bg-inksoft p-3">
-              <p className="font-bold text-coral uppercase mb-1">Tavolo delle Autorità</p>
-              Accesso prioritario per l'imprenditore al banchetto e dibattito con sindaci e direttori artistici.
+              <p className="font-bold text-coral uppercase mb-1">Tavolo Multi Stakeholder</p>
+              Accesso dell'imprenditore al workshop sulle policy pubblico private con esponenti locali.
             </div>
           </div>
         </div>
@@ -382,15 +382,15 @@ export default function Platforms() {
             <ul className="mt-7 divide-y divide-bone/15 border-y border-bone/15">
               {(tab === "manager"
                 ? [
-                  ["Panoramica annuale", "Unità Impact, Social Impact Index e valore welfare distribuito su tutti i presidi, aggiornati dal saldo consumi."],
-                  ["Deep dive analitico", "Carbon footprint quarter over quarter, indici sintetici, rating ESG e scostamenti rispetto al target CSRD."],
+                  ["Panoramica annuale", "Unità Impact, Social Impact Index e valore delle esperienze distribuito su tutti i presidi, aggiornati dal saldo consumi."],
+                  ["Deep dive analitico", "Carbon footprint quarter over quarter, indici sintetici, rating di prossimità e avanzamento impatto."],
                   ["Geolocalizzazione iniziative", "Collage editoriale dei progetti finanziati con coordinate, stato di avanzamento e foto d'archivio."],
-                  ["Archivio scaricabile", "PDF ad alta risoluzione e CSV conformi GRI: il dossier che consegnate ai revisori senza rielaborazioni."],
+                  ["Archivio scaricabile", "Dossier PDF ad alta risoluzione e CSV con attestazioni: la documentazione per valorizzare la Best Practice."],
                 ]
                 : tab === "mobile"
                   ? [
                     ["Borsellino e consumi di sede", "Saldo erogazioni aziendali, CO₂ evitata e chilometri di trasporto dedicati azzerati dal paniere a Km 0."],
-                    ["Welfare Territoriale e Km 0", "Bacheca dei festival sostenuti nelle Marche, catalogo biglietti omaggio e convenzioni nei 24 Comuni."],
+                    ["Esperienze nei Borghi e Km 0", "Bacheca dei festival sostenuti nelle Marche, catalogo titoli omaggio e convenzioni nei 24 Comuni."],
                     ["Attestato ufficiale", "Rilascio in un tocco dell'attestato numerato con hash e marcatura temporale: collezionabile e condivisibile."],
                     ["Voto del team sui festival", "I collaboratori usano i Punti Impatto aziendali per votare quale rassegna sostenere con priorità."],
                   ]
@@ -424,7 +424,7 @@ export default function Platforms() {
 
             <p className="mt-6 font-mono text-[10px] leading-relaxed tracking-[0.12em] text-bone/45 uppercase">
               {tab === "manager"
-                ? "FR-04 · export dati ESG in PDF e CSV — conformità GRI / CSRD verificata in audit"
+                ? "FR-04 · export dati d'impatto in PDF e CSV — attestazione verificabile pronta per la rendicontazione"
                 : tab === "mobile"
                   ? "FR-02 · attestato digitale con codice univoco SHA e marcatura temporale"
                   : "PR-01 · visibilità istituzionale e accredito nei festival delle Marche"}

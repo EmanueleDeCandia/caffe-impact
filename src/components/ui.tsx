@@ -69,9 +69,9 @@ export function Stamp({
         </text>
       </svg>
       {sub && (
-        <div className="absolute inset-0 grid place-items-center px-8 text-center">
+        <div className="absolute inset-0 flex items-center justify-center p-2 text-center pointer-events-none select-none">
           <span
-            className="font-mono text-[9px] leading-tight whitespace-pre-line tracking-[0.18em] uppercase"
+            className="font-mono text-[8px] leading-tight whitespace-pre-line tracking-[0.1em] uppercase"
             style={{ color }}
           >
             {sub}

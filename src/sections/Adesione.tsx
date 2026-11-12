@@ -55,7 +55,7 @@ function svgCertificato(c: Cert): string {
 <rect width="1240" height="820" fill="#efe7d2"/>
 <rect x="24" y="24" width="1192" height="772" fill="none" stroke="#15140f" stroke-width="2"/>
 <rect x="40" y="40" width="1160" height="740" fill="none" stroke="#15140f" stroke-width="1" stroke-dasharray="3 6"/>
-${l(70, 110, "GRUPPO ILLIRIA S.P.A. · ILLIRIA COFFEE IMPACT", 15, 700, "#15140f", "start", "3")}
+${l(70, 110, "SHARED VALUE · COFFEE IMPACT", 15, 700, "#15140f", "start", "3")}
 ${l(70, 150, "ATTESTATO DI ADESIONE AL PATTO DI VALORE CONDIVISO", 34, 800, "#15140f", "start", "0")}
 ${l(70, 182, "Documento generato dalla richiesta di adesione — non costituisce contratto fino alla controfirma.", 14, 400, "#2a2620")}
 <line x1="70" y1="210" x2="1170" y2="210" stroke="#15140f" stroke-width="1"/>
@@ -72,7 +72,7 @@ ${l(70, 588, "trasporto evitati", 12, 400, "#2a2620", "start", "1")}
 ${l(330, 566, fmt(c.impatto.co2) + " KG", 30, 800, "#15140f")}
 ${l(330, 588, "CO2 evitata", 12, 400, "#2a2620", "start", "1")}
 ${l(590, 566, fmt(c.impatto.crediti), 30, 800, "#15140f")}
-${l(590, 588, "crediti welfare", 12, 400, "#2a2620", "start", "1")}
+${l(590, 588, "premi ed esperienze", 12, 400, "#2a2620", "start", "1")}
 ${l(850, 566, "EURO " + fmt(c.impatto.welfare), 30, 800, "#15140f")}
 ${l(850, 588, "valore generato", 12, 400, "#2a2620", "start", "1")}
 <rect x="70" y="620" width="1100" height="34" fill="none" stroke="#15140f" stroke-width="1"/>
@@ -81,7 +81,7 @@ ${l(84, 643, "SOCIAL IMPACT INDEX " + c.impatto.indice + "/100 — RATING " + c.
 ${l(70, 700, "CODICE ADESIONE " + c.codice, 14, 700, "#15140f", "start", "2")}
 ${l(70, 724, "TIMESTAMP " + c.timestamp, 12, 400, "#2a2620", "start", "1")}
 <text x="70" y="756" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2a2620">SHA-256 ${c.sha}</text>
-${l(1170, 756, "DIREZIONE IMPACT — GRUPPO ILLIRIA", 11, 700, "#15140f", "end", "2")}
+${l(1170, 756, "SHARED VALUE — INNOVADANTE", 11, 700, "#15140f", "end", "2")}
 <circle cx="1060" cy="330" r="86" fill="none" stroke="#ed6f5c" stroke-width="3"/>
 <circle cx="1060" cy="330" r="72" fill="none" stroke="#ed6f5c" stroke-width="1" stroke-dasharray="3 6"/>
 ${l(1060, 322, "KM 0", 30, 800, "#ed6f5c", "middle")}
@@ -227,14 +227,14 @@ export default function Adesione() {
                 <span className="font-editorial font-medium text-coral normal-case italic">valore condiviso</span>
               </h2>
               <p data-reveal="up" className="mt-6 max-w-md text-[15.5px] leading-relaxed text-bone/70">
-                Compilate il perimetro della vostra rete OCS: vi restituiamo subito un attestato con la stima
+                Compilate il perimetro della vostra rete OCS o Vending: vi restituiamo un prospetto con la stima
                 d'impatto del primo anno, il Social Impact Index previsto e il codice che apre il dossier
-                completo. Un referente della Direzione Impact vi richiama entro due giorni lavorativi.
+                completo. Nella documentazione troverete i benefici della partecipazione per la vostra impresa e il grande contributo che con l'adesione creerete allo sviluppo locale. Un referente del team vi richiama entro due giorni lavorativi.
               </p>
 
               <ul data-reveal="up" className="mt-9 space-y-4 border-t border-bone/20 pt-7">
                 {[
-                  ["Nessun canone aggiuntivo", "Il programma è incluso nel contratto di fornitura OCS."],
+                  ["Nessun costo nascosto", "Il programma è reso disponibile con gli ordini ordinari di fornitura OCS e Vending."],
                   ["Nessun progetto IT", "Rilevazione erogazioni già presente, SSO aziendale, app PWA installabile."],
                   ["Dati aggregati e GDPR", "Consumi letti per matricola anonimizzata o per reparto."],
                 ].map(([t, d]) => (
@@ -254,20 +254,20 @@ export default function Adesione() {
 
               <div data-reveal="up" className="mt-10 flex items-center gap-6">
                 <Stamp
-                  label="patto di valore condiviso · illiria impact · "
+                  label="patto di valore condiviso · coffee impact · "
                   sub={"adesione\naperta"}
                   size={124}
                   tone="coral"
                 />
                 <div className="font-mono text-[10px] leading-relaxed tracking-[0.14em] text-bone/55 uppercase">
-                  Direzione Impact
+                  Shared Value
                   <br />
-                  <a href="mailto:impact@illiria.it" className="link-underline text-bone">
-                    impact@illiria.it
+                  <a href="mailto:sharedvalue@innovadante.com" className="link-underline text-bone">
+                    sharedvalue@innovadante.com
                   </a>
                   <br />
-                  <a href="tel:+390851234567" className="link-underline text-bone">
-                    +39 085 123 4567
+                  <a href="tel:+390734123456" className="link-underline text-bone">
+                    +39 0734 123 456
                   </a>
                 </div>
               </div>
@@ -371,7 +371,7 @@ export default function Adesione() {
                 </div>
 
                 <div className="mt-5">
-                  <Field label="Note per la Direzione Impact" hint="facoltativo">
+                  <Field label="Note per il team Shared Value" hint="facoltativo">
                     <textarea
                       className={`${inputCls} min-h-[96px] resize-y`}
                       value={form.note}
@@ -395,7 +395,7 @@ export default function Adesione() {
                     {[
                       { k: "Km evitati", v: fmt(impatto.km) },
                       { k: "CO₂ evitata", v: `${fmt(impatto.co2)} kg` },
-                      { k: "Crediti welfare", v: fmt(impatto.crediti) },
+                      { k: "Titoli d'accesso", v: fmt(impatto.crediti) },
                       { k: "Indice stimato", v: impatto.rating },
                     ].map((x) => (
                       <div key={x.k} className="bg-bone p-3.5">
@@ -416,7 +416,7 @@ export default function Adesione() {
                     },
                     {
                       k: "dossier" as const,
-                      t: "Desidero ricevere il dossier completo di adesione con Report d'Impatto e Masterplan di filiera.",
+                      t: "Desidero ricevere il dossier di adesione, schema per il Report d'Impatto e Catalogo sui prodotti locali consegnati con i vostri prodotti.",
                     },
                   ].map((c) => (
                     <label key={c.k} className="group flex cursor-pointer items-start gap-3">
@@ -452,7 +452,7 @@ export default function Adesione() {
                     type="submit"
                     className="btn-sweep group inline-flex items-center gap-3 border border-ink bg-ink px-6 py-3.5 text-[11.5px] font-bold tracking-[0.16em] text-bone uppercase"
                   >
-                    Genera l'attestato di adesione
+                    Genera richiesta di adesione
                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" className="arrow-slide">
                       <path d="M2 13L13 2M13 2H5M13 2v8" stroke="currentColor" strokeWidth="1.5" />
                     </svg>
@@ -492,7 +492,7 @@ export default function Adesione() {
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <p className="font-mono text-[10px] tracking-[0.24em] text-coral uppercase">
-                    Gruppo Illiria S.p.A. · Illiria Coffee Impact
+                    Shared Value · Coffee Impact
                   </p>
                   <h3 className="mt-3 text-[clamp(1.5rem,4vw,2.4rem)] leading-[0.98] font-black tracking-[-0.04em] uppercase">
                     Attestato di adesione
@@ -541,8 +541,8 @@ export default function Adesione() {
                     {[
                       { k: "Km evitati", v: fmt(cert.impatto.km) },
                       { k: "CO₂ kg", v: fmt(cert.impatto.co2) },
-                      { k: "Crediti", v: fmt(cert.impatto.crediti) },
-                      { k: "Welfare €", v: fmt(cert.impatto.welfare) },
+                      { k: "Titoli", v: fmt(cert.impatto.crediti) },
+                      { k: "Esperienze €", v: fmt(cert.impatto.welfare) },
                       { k: "Alberi eq.", v: fmt(cert.impatto.alberi) },
                       { k: "Territorio €", v: fmt(cert.impatto.territorio) },
                     ].map((x) => (

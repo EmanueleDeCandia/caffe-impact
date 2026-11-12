@@ -19,7 +19,14 @@ export function useRevealObserver() {
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
     );
-    nodes.forEach((n) => io.observe(n));
+    nodes.forEach((n) => {
+      const rect = n.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        n.classList.add("is-in");
+      } else {
+        io.observe(n);
+      }
+    });
 
     // seconda passata (con throttle): cattura nodi montati in un secondo momento (tab, modali)
     let timer: ReturnType<typeof setTimeout> | undefined;

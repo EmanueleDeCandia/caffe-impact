@@ -158,7 +158,7 @@ export default function Value() {
             <p data-reveal="up" className="mt-5 max-w-sm text-[15px] leading-relaxed text-inksoft/80">
               Il progetto sta in piedi perché la parte pesante resta a noi. Voi continuate a fare quello che fate
               già: bere caffè, scegliere, raccontare. Nessuna integrazione IT, nessuna raccolta dati manuale,
-              nessun canone.
+              nessun costo nascosto.
             </p>
             <p data-reveal="up" className="mt-5 font-mono text-[10px] tracking-[0.14em] text-ink/50 uppercase">
               Tempo medio di attivazione del primo presidio: <span className="text-coral">9 settimane</span>
@@ -170,7 +170,7 @@ export default function Value() {
               <div className="border-ink/15 sm:border-r">
                 <div className="flex items-center justify-between border-b border-ink/15 px-5 py-2.5 md:px-6">
                   <span className="font-mono text-[10px] tracking-[0.2em] text-ink/60 uppercase">
-                    Azienda cliente OCS
+                    Azienda cliente OCS & Vending
                   </span>
                   <span className="font-mono text-[10px] text-ink/35">col. A</span>
                 </div>
@@ -179,7 +179,7 @@ export default function Value() {
               <div>
                 <div className="flex items-center justify-between border-b border-ink/15 bg-coral/10 px-5 py-2.5 md:px-6">
                   <span className="font-mono text-[10px] tracking-[0.2em] text-coral uppercase">
-                    Gruppo Illiria
+                    Shared Value
                   </span>
                   <span className="font-mono text-[10px] text-ink/35">col. B</span>
                 </div>
